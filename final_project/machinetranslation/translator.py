@@ -21,7 +21,15 @@ language_translator.set_service_url('https://api.us-south.language-translator.wa
 
 def englishToFrench(englishText):
     translation = language_translator.translate(
-    text=['text'],
+    text='',
     model_id='en-fr').get_result()
 print(json.dumps(translation, indent=2, ensure_ascii=False))
-    return translation
+    frenchText=translation
+    return frenchText
+
+def frenchToEnglish(frenchText):
+    translation = language_translator.translate(
+    text='',
+    model_id='fr-en').get_result()
+    englishText=translation
+    return englishText
